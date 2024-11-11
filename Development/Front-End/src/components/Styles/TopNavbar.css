@@ -167,3 +167,39 @@
     transform: scale(1);
   }
 }
+
+/* Make the file input visually consistent with other inputs */
+.input-group label {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.input-group input[type="file"]+label {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s;
+  width: 100%;
+  text-align: center;
+}
+
+.input-group input[type="file"]:hover+label {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.input-group input[type="file"]:active+label {
+  background-color: #004494;
+}
+
+.input-group input[type="file"]:focus+label {
+  border-color: #007bff;
+}

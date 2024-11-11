@@ -75,6 +75,7 @@ const AddBrandModal = ({ isOpen, onClose }) => {
               accept="image/*"
               multiple
               onChange={handleFileChange}
+              class="styled-input"
               required
             />
             {fileName && <div className="file-name">{fileName}</div>} {/* Display file name */}
