@@ -18,7 +18,6 @@ const MainNavbar = () => {
             </div>
 
             <div className="nav-links">
-                <button className="add-brand-btn">Add Your Brand</button>
                 <button className="wishlist-btn">Wishlist</button>
                 <button className="cart-btn">Bag (0)</button>
             </div>

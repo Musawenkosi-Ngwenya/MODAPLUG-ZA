@@ -3,8 +3,16 @@
   width: 100%;
   overflow: hidden;
   /* Hides overflowing text */
-  background-color: #333;
+  background-color: #000;
+  /* Set background to black */
   padding: 5px 0;
+  display: flex;
+  justify-content: flex-end;
+  /* Aligns the text to the far right */
+  border: 2px solid red;
+  /* Adds a red border */
+  position: relative;
+  /* Ensures the positioning context for the track */
 }
 
 .news-track {
@@ -20,15 +28,20 @@
   font-size: 14px;
   font-weight: 400;
   color: #ddd;
+  /* Light gray text for contrast */
+  text-transform: capitalize;
+  /* Capitalizes first letter of each word */
 }
 
 /* Animation for continuous scrolling */
 @keyframes scroll-left {
   0% {
     transform: translateX(100%);
+    /* Starts from the far right */
   }
 
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-200%);
+    /* Ends past the far left */
   }
 }

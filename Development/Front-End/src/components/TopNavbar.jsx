@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Styles/TopNavbar.css";
 
-// Modal Component
+// Modal for Login
 const LoginModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
@@ -21,7 +21,10 @@ const LoginModal = ({ isOpen, onClose }) => {
         </form>
 
         <p className="toggle-form">
-          <a href="#" className="text-black">Don't have an account?</a>
+          {/* "Don't have an account?" as a link */}
+          <a href="#" className="text-link" onClick={(e) => e.preventDefault()}>
+            Don't have an account?
+          </a>
         </p>
 
         <button onClick={onClose} className="btn-close">Close</button>
@@ -30,23 +33,85 @@ const LoginModal = ({ isOpen, onClose }) => {
   );
 };
 
+// Modal for Add Your Brand
+const AddBrandModal = ({ isOpen, onClose }) => {
+  const [fileName, setFileName] = useState("");
+
+  // Handle file selection
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setFileName(file.name); // Set the name of the selected file
+    }
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <h2>Add Your Brand</h2>
+        {/* Add Your Brand Form */}
+        <form>
+          <div className="input-group">
+            <input type="text" placeholder="Brand Name" required />
+          </div>
+          <div className="input-group">
+            <input type="email" placeholder="Email Address" required />
+          </div>
+          <div className="input-group">
+            <input type="number" placeholder="Contact Number" required />
+          </div>
+
+          {/* Upload Your Products Section */}
+          <div className="input-group">
+            <label htmlFor="product-upload" className="upload-btn">
+              Upload Your Products
+            </label>
+            <input
+              type="file"
+              id="product-upload"
+              name="product-upload"
+              accept="image/*"
+              multiple
+              onChange={handleFileChange}
+              required
+            />
+            {fileName && <div className="file-name">{fileName}</div>} {/* Display file name */}
+          </div>
+
+          <button type="submit" className="btn-primary">Submit</button>
+        </form>
+
+        <button onClick={onClose} className="btn-close">Close</button>
+      </div>
+    </div>
+  );
+};
+
 const TopNavbar = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isAddBrandModalOpen, setIsAddBrandModalOpen] = useState(false);
 
   // Toggle modal visibility
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
+  const toggleLoginModal = () => {
+    setIsLoginModalOpen(!isLoginModalOpen);
+  };
+
+  const toggleAddBrandModal = () => {
+    setIsAddBrandModalOpen(!isAddBrandModalOpen);
   };
 
   return (
     <div className="top-navbar">
       <div className="top-nav-buttons">
-        <button>Add Your Brand</button>
-        <button onClick={toggleModal}>Login/Sign Up</button>
+        <button onClick={toggleAddBrandModal}>Add Your Brand</button>
+        <button onClick={toggleLoginModal}>Login/Sign Up</button>
       </div>
 
-      {/* Modal Component */}
-      <LoginModal isOpen={isModalOpen} onClose={toggleModal} />
+      {/* Modal Components */}
+      <LoginModal isOpen={isLoginModalOpen} onClose={toggleLoginModal} />
+      <AddBrandModal isOpen={isAddBrandModalOpen} onClose={toggleAddBrandModal} />
     </div>
   );
 };
