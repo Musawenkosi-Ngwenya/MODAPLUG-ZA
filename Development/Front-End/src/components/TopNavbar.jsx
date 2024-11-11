@@ -2,14 +2,20 @@ import React, { useState } from "react";
 import "./Styles/TopNavbar.css";
 
 // Modal for Login
-const LoginModal = ({ isOpen, onClose }) => {
+const LoginModal = ({ isOpen, onClose, toggleToSignUp }) => {
+  const [isSignUp, setIsSignUp] = useState(false);
+
   if (!isOpen) return null;
+
+  const toggleForm = () => {
+    setIsSignUp(!isSignUp); // Toggle between login and sign up
+  };
 
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <h2>Login</h2>
-        {/* Login Form */}
+        <h2>{isSignUp ? "Sign Up" : "Login"}</h2>
+        {/* Form Based on isSignUp */}
         <form>
           <div className="input-group">
             <input type="email" placeholder="Email" required />
@@ -17,13 +23,23 @@ const LoginModal = ({ isOpen, onClose }) => {
           <div className="input-group">
             <input type="password" placeholder="Password" required />
           </div>
-          <button type="submit" className="btn-primary">Login</button>
+          {!isSignUp && (
+            <button type="submit" className="btn-primary">Login</button>
+          )}
+          {isSignUp && (
+            <>
+              <div className="input-group">
+                <input type="password" placeholder="Confirm Password" required />
+              </div>
+              <button type="submit" className="btn-primary">Sign Up</button>
+            </>
+          )}
         </form>
 
         <p className="toggle-form">
-          {/* "Don't have an account?" as a link */}
-          <a href="#" className="text-link" onClick={(e) => e.preventDefault()}>
-            Don't have an account?
+          {/* Toggle between Login and Sign Up */}
+          <a href="#" className="text-link" onClick={toggleForm}>
+            {isSignUp ? "Already have an account?" : "Don't have an account?"}
           </a>
         </p>
 
@@ -75,7 +91,7 @@ const AddBrandModal = ({ isOpen, onClose }) => {
               accept="image/*"
               multiple
               onChange={handleFileChange}
-              class="styled-input"
+              className="styled-input"
               required
             />
             {fileName && <div className="file-name">{fileName}</div>} {/* Display file name */}

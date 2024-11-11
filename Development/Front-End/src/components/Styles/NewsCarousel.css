@@ -41,7 +41,7 @@
   }
 
   100% {
-    transform: translateX(-200%);
+    transform: translateX(-250%);
     /* Ends past the far left */
   }
 }
