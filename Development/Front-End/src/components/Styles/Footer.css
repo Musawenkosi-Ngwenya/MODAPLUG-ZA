@@ -1,0 +1,32 @@
+/* Footer.css */
+.footer {
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-links,
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .footer-links button,
+  .social-icons button {
+    background-color: transparent;
+    border: 1px solid #444;
+    padding: 8px 12px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .footer-links button:hover,
+  .social-icons button:hover {
+    background-color: #555;
+  }
+  

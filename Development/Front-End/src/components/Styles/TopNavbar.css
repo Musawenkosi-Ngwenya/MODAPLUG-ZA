@@ -1,0 +1,22 @@
+/* TopNavbar.css */
+.top-navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    background-color: #000;
+  }
+  
+  .top-nav-buttons button {
+    margin-left: 15px;
+    padding: 8px 12px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .top-nav-buttons button:hover {
+    background-color: #666;
+  }
+  

@@ -1,0 +1,13 @@
+/* ImageBanner.css */
+.image-banner {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.image-banner img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+}

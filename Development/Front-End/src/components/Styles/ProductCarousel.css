@@ -1,0 +1,18 @@
+/* ProductCarousel.css */
+.product-carousel {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #222;
+}
+
+.product-carousel h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.product-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}

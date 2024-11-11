@@ -1,0 +1,34 @@
+/* NewsCarousel.css */
+.news-carousel {
+  width: 100%;
+  overflow: hidden;
+  /* Hides overflowing text */
+  background-color: #333;
+  padding: 5px 0;
+}
+
+.news-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
+}
+
+.news-item {
+  display: inline-block;
+  margin-right: 50px;
+  /* Space between news items */
+  font-size: 14px;
+  font-weight: 400;
+  color: #ddd;
+}
+
+/* Animation for continuous scrolling */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
