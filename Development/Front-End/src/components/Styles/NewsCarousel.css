@@ -9,7 +9,7 @@
   display: flex;
   justify-content: flex-end;
   /* Aligns the text to the far right */
-  border: 2px solid red;
+  border: 1px solid red;
   /* Adds a red border */
   position: relative;
   /* Ensures the positioning context for the track */
