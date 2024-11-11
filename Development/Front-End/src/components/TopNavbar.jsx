@@ -21,7 +21,7 @@ const LoginModal = ({ isOpen, onClose }) => {
         </form>
 
         <p className="toggle-form">
-          <span className="text-black">Don't have an account?</span>
+          <a href="#" className="text-black">Don't have an account?</a>
         </p>
 
         <button onClick={onClose} className="btn-close">Close</button>

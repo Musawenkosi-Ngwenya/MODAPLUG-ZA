@@ -1,4 +1,31 @@
-/* Overlay styles */
+/* TopNavbar styles */
+.top-navbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  background-color: #000;
+}
+
+.top-nav-buttons button {
+  margin-left: 15px;
+  padding: 8px 12px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.top-nav-buttons button:hover {
+  background-color: #666;
+}
+
+/* Styling for the "Don't have an account?" text */
+.text-black {
+  color: black;
+}
+
+/* Modal overlay styles */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -81,21 +108,6 @@
 
 .btn-close:hover {
   color: #333;
-}
-
-/* Toggle form link */
-.toggle-form {
-  margin-top: 15px;
-  font-size: 14px;
-}
-
-.toggle-form span {
-  color: #007bff;
-  cursor: pointer;
-}
-
-.toggle-form span:hover {
-  text-decoration: underline;
 }
 
 /* Animations */
